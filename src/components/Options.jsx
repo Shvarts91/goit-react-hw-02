@@ -1,3 +1,5 @@
+import style from "./Options.module.css";
+
 export default function Options({
   resetReview,
   totalFeedback,
@@ -9,17 +11,22 @@ export default function Options({
   };
 
   return (
-    <>
+    <div className={style.options}>
       {Object.keys(reviews).map((option) => (
-        <button key={option} onClick={handleClick(option)}>
+        <button
+          className={style.button}
+          type="button"
+          key={option}
+          onClick={handleClick(option)}
+        >
           {option}
         </button>
       ))}
       {totalFeedback > 0 && (
-        <button onClick={resetReview} type="reset">
+        <button className={style.button} onClick={resetReview} type="reset">
           Reset
         </button>
       )}
-    </>
+    </div>
   );
 }
