@@ -22,7 +22,7 @@ export default function Options({
           {option}
         </button>
       ))}
-      {totalFeedback > 0 && (
+      {totalFeedback > 0 ?? (
         <button className={style.button} onClick={resetReview} type="reset">
           Reset
         </button>
